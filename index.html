@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+
+    <!-- 채용 지원 때 링크로만 연다. 검색에 잡힐 이유가 없다.
+         공개 검색을 허용하려면 이 줄을 지운다. -->
+    <meta name="robots" content="noindex, nofollow" />
+
+    <title>LEE GEUN HAG</title>
+
+    <!-- 파비콘. public/ 에 둔 파일은 빌드하면 루트로 그대로 복사된다. -->
+    <link rel="icon" type="image/png" href="/og-image.png" />
+    <link rel="apple-touch-icon" href="/og-image.png" />
+    <meta
+      name="description"
+      content="번거로운 일을 줄이려고 코드를 쓰기 시작했습니다. 이제는 필요한 곳에 AI를 붙여, 사람이 하던 일을 덜어냅니다."
+    />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+    />
+
+    <!-- 첫 화면 흰 번쩍임 방지.
+         번들 CSS 가 도착하기 전에도 바탕색이 맞게 깔리도록 여기서 먼저 정한다.
+         값은 src/index.css 의 --bg 와 같아야 한다. -->
+    <style>
+      html { background: #fafaf9; color-scheme: light; }
+      html.dark { background: #181818; color-scheme: dark; }
+    </style>
+
+    <!-- React 가 붙기 전에 dark 클래스를 먼저 찍는다 -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem("theme");
+          var dark = saved
+            ? saved === "dark"
+            : window.matchMedia("(prefers-color-scheme: dark)").matches;
+          if (dark) document.documentElement.classList.add("dark");
+        } catch (e) {}
+      })();
+    </script>
+    <script type="module" crossorigin src="/assets/index-fSgG_2_F.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-BWSS1Q2H.css">
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- 챗봇 위젯 — 이 포트폴리오로 학습시킨 챗베이스 봇이다.
+         defer 라 본문 렌더를 막지 않고, 로드에 실패하면 아무것도 그리지 않고 조용히 빠진다.
+         인쇄에서 빼는 것은 src/index.css 의 @media print 참고. -->
+    <script
+      src="https://chatbase.kr/widget.js"
+      data-bot-id="fYbH2eYzqGoH_2zy"
+      defer></script>
+  </body>
+</html>
